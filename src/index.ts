@@ -1,3 +1,4 @@
+import { SolanaAgentKit, createSolanaTools } from "solana-agent-kit";
 import { PostgresDatabaseAdapter } from "@ai16z/adapter-postgres";
 import { SqliteDatabaseAdapter } from "@ai16z/adapter-sqlite";
 import { DirectClientInterface } from "@ai16z/client-direct";
@@ -211,6 +212,23 @@ export function createAgent(
     "Creating runtime for character",
     character.name
   );
+
+  // const agent = new SolanaAgentKit(
+  //   process.env.SOLANA_PRIVATE_KEY,
+  //   process.env.SOLANA_RPC_URL,
+  //   process.env.OPENAI_API_KEY
+  // );
+
+  // const tools = createSolanaTools(agent);
+
+  // const result = agent.deployToken(
+  //   "Eido Token",
+  //   "uri",
+  //   "token",
+  //   9,
+  //   1000000
+  // );
+
   return new AgentRuntime({
     databaseAdapter: db,
     token,
